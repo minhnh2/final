@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src/",
     "target": "es5",
     "lib": [
       "dom",
@@ -21,6 +22,12 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "resources/**/*.ts",
+    "firebase.config.js",
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts"
   ]
 }
