@@ -5,15 +5,14 @@ import { useStatevalue } from 'context/StateProvider';
 import { useEffect, useState } from 'react';
 import NewItems from './NewItems';
 import MenuContainer from './MenuContainer';
+import CardContainer from './CardContainer';
 
 
 const MainContainer = () => {
-    const [{ foodItems }, dispatch] = useStatevalue();
-    const [scrollValue, setScrollValue] = useState(0);
+    const [{ foodItems, cartShow }, dispatch] = useStatevalue();
     useEffect(() => {
 
-    }, [scrollValue])
-    console.log(scrollValue);
+    }, [cartShow])
 
 
 
@@ -22,6 +21,9 @@ const MainContainer = () => {
             <HomeContainer />
             <NewItems />
             <MenuContainer />
+            {cartShow && (
+                <CardContainer />
+            )}
 
         </div>
     )

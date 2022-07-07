@@ -10,8 +10,8 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 function HomeContainer() {
     return (
-        <section className='grid grid-cols-1 md:grid-cols-2 gap-2 w-full ' id='home'>
-            <div className='py-2  flex-1 flex flex-col items-start md:items-center justify-center gap-6'>
+        <section className='grid grid-cols-1 md:grid-cols-2 gap-2 w-full md:mt-24' id='home'>
+            <div className='py-2 flex-1 flex flex-col items-start justify-center gap-6'>
                 <div className='flex items-center gap-2 justify-center bg-orange-100 rounded-full px-2 py-1 '>
 
                     <p className='text-base text-orange-500 font-semibold'>Bike Delevery</p>
@@ -38,7 +38,7 @@ function HomeContainer() {
                     alt="hero-bg"
                 />
 
-                <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
+                <div className="w-full  h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
                     {MenuData &&
                         MenuData.map((n) => (
                             <div

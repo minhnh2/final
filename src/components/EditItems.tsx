@@ -1,6 +1,6 @@
 import { useStatevalue } from 'context/StateProvider';
 import React, { useEffect } from 'react'
-import { deleteItems, getAllFoodItems, saveItem } from '../utils/firebaseFunction'
+import { deleteItems, saveItem } from '../utils/firebaseFunction'
 
 const EditItems: React.FC = () => {
     const [{ foodItems }, dispatch] = useStatevalue();
@@ -15,6 +15,9 @@ const EditItems: React.FC = () => {
     //     }
     //     saveItem(data)
     // }
+    const handleUpdateItems = () => {
+
+    }
     const handleDelete = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
         deleteItems(event.currentTarget.id)
@@ -52,7 +55,7 @@ const EditItems: React.FC = () => {
                         </td>
                         <td>
                             <button
-
+                                onClick={handleUpdateItems}
                                 className='py-1 px-2 bg-yellow-500 text-lg text-white rounded-lg mr-2'>Edit</button>
                             <button
                                 id={n.id}

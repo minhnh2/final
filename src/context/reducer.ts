@@ -2,12 +2,14 @@ import { InitialState } from "./initialState";
 
 export const actionType = {
     SET_USER: 'SET_USER', // update user : call action type and dispatch the value
-    SET_FOOD_ITEMS: 'SET_FOOD_ITEMS'
+    SET_FOOD_ITEMS: 'SET_FOOD_ITEMS',
+    SET_CART_SHOW: 'SET_CART_SHOW',
+    SET_CART_ITEMS: 'SET_CART_ITEMS'
 
 }
 
 
-const reducer = (state: InitialState, action: { type: string, user: any, foodItems: any }) => {
+const reducer = (state: InitialState, action: { type: string, user: any, foodItems: any, cartShow: boolean, cartItems: any }) => {
     console.log(action)
 
     switch (action.type) {
@@ -20,6 +22,16 @@ const reducer = (state: InitialState, action: { type: string, user: any, foodIte
             return {
                 ...state,
                 foodItems: action.foodItems,
+            }
+        case actionType.SET_CART_SHOW:
+            return {
+                ...state,
+                cartShow: action.cartShow
+            }
+        case actionType.SET_CART_ITEMS:
+            return {
+                ...state,
+                cartItems: action.cartItems
             }
         default: return state;
     }

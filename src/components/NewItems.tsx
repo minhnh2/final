@@ -23,7 +23,7 @@ function NewItems() {
     };
 
     return (
-        <section className='w-full mt-8'>
+        <section className='w-full mt-8 '>
             <div className='w-full flex items-center justify-between'>
                 <p className='text-2xl font-semibold capitalize text-headingColor relative before:absolute
         before:rounded-lg before:content before:w-20 before:h-1 before:-bottom-1 before:left-0 before:bg-gradient-to-tr 

@@ -9,6 +9,7 @@ import { getAllFoodItems, saveItem } from '../utils//firebaseFunction';
 import { useStatevalue } from 'context/StateProvider';
 import { actionType } from 'context/reducer';
 import EditItems from './EditItems'
+import EditOder from './EditOder';
 
 
 
@@ -22,6 +23,7 @@ function CreateContainer() {
     const [alertStatus, setAlertStatus] = React.useState<string>("danger");
     const [msg, setMsg] = React.useState<any>(null);
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
+    const [show, setShow] = React.useState<boolean>(true);
 
     const [{ }, dispatch] = useStatevalue();
 
@@ -78,6 +80,7 @@ function CreateContainer() {
                 foodItems: data,
             })
         })
+
     }
 
     const deleteImg = () => {
@@ -143,12 +146,9 @@ function CreateContainer() {
         fetchData();
     }
 
-
-
-
     return (<>
 
-        <div className='w-full min-h-screeen flex items-center justify-center   '>
+        <div className='w-full min-h-screeen flex items-center justify-center md:mt-20    '>
             <div className='w-[90%] md:w-[75%] border font-semibold border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center '>
                 {
                     fields && (
@@ -256,7 +256,25 @@ function CreateContainer() {
 
             </div>
         </div>
-        <EditItems />
+        <div>
+
+        </div>
+        <div className='flex w-full items-center justify-center '>
+            <span className={show ? 'text-orange-600' : ''}
+                onClick={() => setShow(true)}
+            >Edit Items</span>
+            <span className={!show ? 'text-orange-600' : ''}
+                onClick={() => setShow(false)}
+            >Edit Orders</span>
+
+            {show ? (
+                <EditItems />
+
+            ) : (
+                <EditOder />
+            )}
+        </div>
+
 
     </>
     )
